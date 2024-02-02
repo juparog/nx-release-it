@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/juparog/nx-release-it/compare/v1.0.0...v1.0.1) (2024-02-02)
+
+
+### Bug Fixes
+
+* deploy npm ([49c56e2](https://github.com/juparog/nx-release-it/commit/49c56e2067d89325b3c6469a2fd82d84cefa3c27))
+
 ## 1.0.0 (2024-02-02)
 
 

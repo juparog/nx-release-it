@@ -19,7 +19,15 @@
       "dependsOn": ["build"]
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/foo/**/*.{ts,tsx,js,jsx}",
+          "libs/foo/package.json",
+          "libs/foo/project.json"
+        ]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",

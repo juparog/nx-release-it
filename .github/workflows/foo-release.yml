@@ -12,7 +12,7 @@ jobs:
           node-version: 20
       - uses: nrwl/nx-set-shas@v3
       - name: Install deps
-        run: npm i
+        run: npm ci
       - name: Lint
         run: npx nx run foo:lint
       - name: Test

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@juparog/baz": ["libs/baz/src/index.ts"],
       "@juparog/release-it-bar": ["libs/bar/src/index.ts"],
       "@juparog/release-it-foo": ["libs/foo/src/index.ts"]
     }

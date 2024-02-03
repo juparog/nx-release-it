@@ -1,4 +1,4 @@
-import { foo, fooAndBar } from './foo';
+import { foo, fooAndBar, fooAndBaz } from './foo';
 
 describe('foo', () => {
   it('should work', () => {
@@ -9,5 +9,11 @@ describe('foo', () => {
 describe('foo and bar', () => {
   it('should work', () => {
     expect(fooAndBar()).toEqual('foo-bar');
+  });
+});
+
+describe('foo and baz', () => {
+  it('should work', () => {
+    expect(fooAndBaz()).toEqual('foo-baz');
   });
 });

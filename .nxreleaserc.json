@@ -3,5 +3,7 @@
   "npm": true,
   "github": true,
   "repositoryUrl": "https://github.com/juparog/nx-release-it",
-  "branches": ["main"]
+  "branches": [
+    "master"
+  ]
 }

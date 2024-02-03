@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/juparog/nx-release-it/compare/v1.0.1...v1.1.0) (2024-02-03)
+
+
+### Features
+
+* new lib baz ([37fc4cf](https://github.com/juparog/nx-release-it/commit/37fc4cf84e46d26b141b2b9087717deab1bfd2cc))
+
 ## [1.0.1](https://github.com/juparog/nx-release-it/compare/v1.0.0...v1.0.1) (2024-02-02)
 
 

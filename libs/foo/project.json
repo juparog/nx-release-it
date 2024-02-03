@@ -6,21 +6,29 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/foo",
         "main": "libs/foo/src/index.ts",
         "tsConfig": "libs/foo/tsconfig.lib.json",
-        "assets": ["libs/foo/*.md"]
+        "assets": [
+          "libs/foo/*.md"
+        ]
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs foo {args.ver} {args.tag}",
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "libs/foo/**/*.{ts,tsx,js,jsx}",
@@ -31,7 +39,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "libs/foo/jest.config.ts"
       }
@@ -41,7 +51,18 @@
       "options": {
         "libName": "foo"
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "foo-v${VERSION}"
+      }
     }
   },
-  "tags": ["libs"]
+  "tags": [
+    "libs"
+  ]
 }

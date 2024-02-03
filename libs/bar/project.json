@@ -6,21 +6,29 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/bar",
         "main": "libs/bar/src/index.ts",
         "tsConfig": "libs/bar/tsconfig.lib.json",
-        "assets": ["libs/bar/*.md"]
+        "assets": [
+          "libs/bar/*.md"
+        ]
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs bar {args.ver} {args.tag}",
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "libs/bar/**/*.{ts,tsx,js,jsx}",
@@ -30,7 +38,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "libs/bar/jest.config.ts"
       }
@@ -40,7 +50,18 @@
       "options": {
         "libName": "bar"
       }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "bar-v${VERSION}"
+      }
     }
   },
-  "tags": ["libs"]
+  "tags": [
+    "libs"
+  ]
 }
